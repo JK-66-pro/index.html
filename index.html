@@ -3,126 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JKuro Nova</title>
+  <title>JKuro Nova - Le studio de demain, aujourd’hui</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-    /* Fond avec ton image */
+    /* Reset & base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-image: url('background.png');
+      font-family: 'Orbitron', sans-serif;
+      background: url('background.png') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #eee;
+      color: #fff;
       min-height: 100vh;
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       padding: 40px 20px;
-      box-sizing: border-box;
-    }
-
-    /* Conteneur avec fond semi-transparent pour lisibilité */
-    .container {
-      max-width: 800px;
-      background: rgba(20, 20, 30, 0.85);
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
       overflow-y: auto;
     }
 
-    /* Logo centré en haut */
-    .logo {
-      display: block;
-      margin: 0 auto 30px auto;
-      max-width: 220px;
-      height: auto;
+    /* Conteneur principal avec glow néon */
+    .container {
+      background: rgba(10,10,30,0.85);
+      max-width: 800px;
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow:
+        0 0 10px #ff6a00,
+        0 0 20px #ff6a00,
+        0 0 30px #ff6a00,
+        0 0 40px #ff6a00,
+        0 0 60px #ff6a00;
+      border: 2px solid #ff6a00;
+      text-align: center;
     }
 
+    /* Logo centré avec effet néon */
+    .logo {
+      max-width: 180px;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 0 6px #ff6a00);
+    }
+
+    /* Titres avec effet glow */
     h1 {
-      text-align: center;
-      font-size: 2.8rem;
-      color: #ff5722;
+      font-size: 3rem;
+      color: #ff6a00;
+      text-shadow:
+        0 0 8px #ff6a00,
+        0 0 15px #ff6a00,
+        0 0 20px #ff6a00;
       margin-bottom: 30px;
-      text-shadow: 0 0 10px #ff5722;
     }
 
     h2 {
-      color: #ffa04d;
-      margin-top: 40px;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #ff5722;
+      font-size: 2rem;
+      color: #ff9c3b;
+      text-shadow: 0 0 8px #ff9c3b;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ff6a00;
       padding-bottom: 6px;
-      font-size: 1.8rem;
+      text-align: left;
     }
 
+    /* Paragraphes */
     p, blockquote {
-      line-height: 1.6;
       font-size: 1.1rem;
+      line-height: 1.6;
       margin-bottom: 25px;
-      color: #eee;
+      color: #f4c26f;
+      text-align: justify;
+      text-shadow: 0 0 4px #ff7e00;
     }
 
     blockquote {
-      background: #2a2a3c;
-      border-left: 6px solid #ff5722;
+      border-left: 5px solid #ff6a00;
+      background: rgba(255, 106, 0, 0.15);
       padding: 12px 20px;
       font-style: italic;
-      margin-left: 0;
     }
 
     a {
-      color: #ff9966;
-      text-decoration: none;
+      color: #ff9c3b;
       font-weight: 700;
+      text-decoration: none;
       transition: color 0.3s ease;
       word-break: break-word;
     }
-
     a:hover {
-      color: #ffd8b3;
-      text-decoration: underline;
+      color: #fff1b0;
+      text-shadow: 0 0 8px #fff1b0;
     }
 
-    /* Boutons liens */
+    /* Boutons néon */
     .btn-link {
       display: inline-block;
-      background: #ff5722;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
+      background: #ff6a00;
+      color: #fff;
       font-weight: 700;
-      margin: 6px 10px 20px 0;
-      box-shadow: 0 3px 8px rgba(255, 87, 34, 0.6);
-      transition: background-color 0.3s ease;
+      padding: 12px 28px;
+      border-radius: 30px;
+      box-shadow:
+        0 0 8px #ff6a00,
+        0 0 15px #ff6a00,
+        inset 0 0 8px #ff6a00;
+      margin: 10px 12px 20px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      user-select: none;
     }
-
     .btn-link:hover {
-      background-color: #ff7a33;
+      background: #ff8c33;
+      box-shadow:
+        0 0 20px #ff8c33,
+        0 0 30px #ff8c33,
+        inset 0 0 12px #ff8c33;
+      transform: scale(1.05);
+      text-shadow: 0 0 12px #fff;
     }
 
     /* Responsive */
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       body {
-        padding: 20px 10px;
+        padding: 20px 15px;
       }
       .container {
-        padding: 20px 20px;
+        padding: 30px 20px;
       }
       h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       h2 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
       }
       p, blockquote {
         font-size: 1rem;
       }
       .logo {
-        max-width: 150px;
+        max-width: 140px;
+        margin-bottom: 30px;
       }
     }
   </style>
@@ -130,7 +154,6 @@
 <body>
 
   <div class="container">
-    <!-- Logo (fichier "Logo site web JKuro nova") -->
     <img src="Logo site web JKuro nova.png" alt="Logo JKuro Nova" class="logo" />
 
     <h1>JKuro Nova – Le studio de demain, aujourd’hui</h1>
@@ -141,7 +164,7 @@
     <p>Actuellement, on travaille sur deux projets très spéciaux, et on a besoin de vous pour les faire grandir.<br />
     👉 Rejoignez-nous, donnez-nous vos idées, vos avis… et surtout, suivez nos aventures !</p>
 
-    <hr />
+    <hr style="border-color:#ff6a00; margin: 30px 0;" />
 
     <h2>🔥 Qui sommes-nous ?</h2>
     <p>Nous sommes trois créateurs :</p>
@@ -154,7 +177,7 @@
     <p>On se regroupe sous le nom JKuro Nova, un petit studio indépendant qui a de grandes ambitions.<br />
     Vous pouvez aussi nous retrouver sur notre serveur 💬 Discord, où on échange avec notre commu, on partage nos idées, et vous pouvez même proposer les vôtres.</p>
 
-    <hr />
+    <hr style="border-color:#ff6a00; margin: 30px 0;" />
 
     <h2>🥷 Projet 1 – Amberfall</h2>
     <blockquote>Un Assassin’s Creed… mais repensé par nous.</blockquote>
@@ -166,7 +189,7 @@
     <p>Le jeu n’est pas encore en développement, mais l’univers prend forme chaque jour.<br />
     📢 Si vous avez des idées de gameplay, de mécaniques ou de lore, venez les partager sur le Discord !</p>
 
-    <hr />
+    <hr style="border-color:#ff6a00; margin: 30px 0;" />
 
     <h2>🐉 Projet 2 – Soulfall</h2>
     <blockquote>Vous vous réveillez dans le noir… et votre mémoire s’est brisée.</blockquote>
@@ -177,8 +200,5 @@
     <p>Chaque boss cache un morceau de votre passé. Et le dernier, Soulfall, détient la vérité… mais aussi le secret de votre chute.</p>
 
     <p>✨ Le développement commence bientôt.<br />
-    Si vous voulez suivre cette aventure ou y participer, le lien Discord est juste ici ➤ <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer">https://discord.gg/sCdM7jDGWu</a></p>
-  </div>
-
-</body>
-</html>
+    Si vous voulez suivre cette aventure ou y participer, le lien Discord est juste ici ➤ <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer" class="btn-link">Rejoindre le Discord</a></p>
+ 
