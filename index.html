@@ -5,96 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JKuro Nova – Le studio de demain</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    /* Animation dégradé */
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #eee;
-      background: url('background.png') no-repeat center center fixed;
-      background-size: cover;
-      background-color: #121212;
+      font-family: 'Poppins', sans-serif;
+      color: #f0f0f0;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
     }
 
     .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 30px;
-      background-color: rgba(15, 15, 20, 0.85);
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      max-width: 800px;
+      padding: 40px 50px;
+      box-shadow: 0 0 20px rgba(45, 120, 255, 0.4);
+      text-align: center;
     }
 
     .logo {
-      display: block;
-      max-width: 280px;
-      margin: 0 auto 30px auto;
+      max-width: 200px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 8px #2d78ff99);
     }
 
-    h1, h2 {
-      color: #ff6a00;
-      text-shadow: 0 0 4px rgba(255, 106, 0, 0.3);
-      font-weight: 700;
+    h1 {
+      font-weight: 600;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #2d78ff;
+      text-shadow: 0 0 8px #2d78ff;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #74a9ff;
+      text-shadow: 0 0 6px #74a9ffaa;
     }
 
     p, li {
+      font-weight: 300;
+      font-size: 1rem;
       line-height: 1.6;
-      color: #ddd;
-    }
-
-    .section {
-      margin-top: 40px;
+      margin-bottom: 12px;
+      color: #d1d9ffdd;
+      text-align: left;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     ul {
       padding-left: 20px;
+      text-align: left;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     a {
-      color: #5ec8ff;
-      text-decoration: none;
+      color: #75a0ff;
       font-weight: 600;
+      text-decoration: none;
       transition: color 0.3s ease;
     }
 
     a:hover {
-      color: #9fdfff;
-      text-decoration: underline;
+      color: #b3ccff;
     }
 
-    a.discord-link {
+    .btn-discord {
       display: inline-block;
-      background-color: #5865f2;
+      margin-top: 20px;
+      background: linear-gradient(45deg, #5865f2, #7289da);
+      padding: 14px 30px;
+      border-radius: 30px;
       color: white;
-      padding: 10px 22px;
-      border-radius: 22px;
-      font-weight: 600;
-      margin-top: 15px;
-      text-decoration: none;
-      box-shadow: 0 0 8px #5865f2aa;
-      transition: background-color 0.3s ease;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      box-shadow: 0 0 15px #5865f2cc;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
     }
 
-    a.discord-link:hover {
-      background-color: #4752c4;
+    .btn-discord:hover {
+      background: linear-gradient(45deg, #7289da, #5865f2);
+      box-shadow: 0 0 25px #7289daee;
     }
 
     footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #94a3b8aa;
       text-align: center;
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #aaa;
     }
 
+    /* Responsive */
     @media (max-width: 600px) {
       .container {
-        margin: 40px 15px;
-        padding: 20px;
+        padding: 25px 20px;
       }
       h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
       h2 {
         font-size: 1.3rem;
+      }
+      p, li {
+        font-size: 0.9rem;
+      }
+      .logo {
+        max-width: 140px;
+        margin-bottom: 20px;
       }
     }
   </style>
@@ -115,53 +162,48 @@
       👉 Rejoignez-nous, donnez-nous vos idées, vos avis… et surtout, suivez nos aventures !
     </p>
 
-    <div class="section">
-      <h2>🔥 Qui sommes-nous ?</h2>
-      <p>Nous sommes trois créateurs :</p>
-      <ul>
-        <li>JK (YouTube : <a href="https://www.youtube.com/@JK-66-mp3" target="_blank" rel="noopener noreferrer">@JK-66-mp3</a>)</li>
-        <li>Seichele (YouTube : <a href="https://www.youtube.com/@Seichele-p3m" target="_blank" rel="noopener noreferrer">@Seichele-p3m</a>)</li>
-        <li>Zenova (YouTube : <a href="https://www.youtube.com/@Zenovamanchova" target="_blank" rel="noopener noreferrer">@Zenovamanchova</a>)</li>
-      </ul>
-      <p>
-        On se regroupe sous le nom <strong>JKuro Nova</strong>, un petit studio indépendant qui a de grandes ambitions.<br />
-        Vous pouvez aussi nous retrouver sur notre serveur 💬 <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer">Discord</a>, où on échange avec notre commu, on partage nos idées, et vous pouvez même proposer les vôtres.
-      </p>
-    </div>
+    <h2>🔥 Qui sommes-nous ?</h2>
+    <p>Nous sommes trois créateurs :</p>
+    <ul>
+      <li>JK (YouTube : <a href="https://www.youtube.com/@JK-66-mp3" target="_blank" rel="noopener noreferrer">@JK-66-mp3</a>)</li>
+      <li>Seichele (YouTube : <a href="https://www.youtube.com/@Seichele-p3m" target="_blank" rel="noopener noreferrer">@Seichele-p3m</a>)</li>
+      <li>Zenova (YouTube : <a href="https://www.youtube.com/@Zenovamanchova" target="_blank" rel="noopener noreferrer">@Zenovamanchova</a>)</li>
+    </ul>
+    <p>
+      On se regroupe sous le nom <strong>JKuro Nova</strong>, un petit studio indépendant qui a de grandes ambitions.<br />
+      Vous pouvez aussi nous retrouver sur notre serveur 💬
+      <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer" class="btn-discord">Rejoindre le Discord</a>
+    </p>
 
-    <div class="section">
-      <h2>🥷 Projet 1 – Amberfall</h2>
-      <p><em>Un Assassin’s Creed… mais repensé par nous.</em></p>
-      <p>
-        <strong>Amberfall</strong>, c’est notre rêve de fans d’infiltration.<br />
-        L’histoire prend place au Japon, à l’époque Edo.<br />
-        On incarne un agent secret de l’Ordre des Anciens, envoyé pour récupérer des informations, infiltrer des clans ennemis et démêler une guerre de l’ombre dans un monde inspiré de l’art japonais et de la philosophie du silence.
-      </p>
-      <p>
-        Le jeu n’est pas encore en développement, mais l’univers prend forme chaque jour.<br />
-        📢 Si vous avez des idées de gameplay, de mécaniques ou de lore, venez les partager sur le Discord !
-      </p>
-    </div>
+    <h2>🥷 Projet 1 – Amberfall</h2>
+    <p><em>Un Assassin’s Creed… mais repensé par nous.</em></p>
+    <p>
+      <strong>Amberfall</strong>, c’est notre rêve de fans d’infiltration.<br />
+      L’histoire prend place au Japon, à l’époque Edo.<br />
+      On incarne un agent secret de l’Ordre des Anciens, envoyé pour récupérer des informations, infiltrer des clans ennemis et démêler une guerre de l’ombre dans un monde inspiré de l’art japonais et de la philosophie du silence.
+    </p>
+    <p>
+      Le jeu n’est pas encore en développement, mais l’univers prend forme chaque jour.<br />
+      📢 Si vous avez des idées de gameplay, de mécaniques ou de lore, venez les partager sur le Discord !
+    </p>
 
-    <div class="section">
-      <h2>🐉 Projet 2 – Soulfall</h2>
-      <p><em>Vous vous réveillez dans le noir… et votre mémoire s’est brisée.</em></p>
-      <p>
-        Dans <strong>Soulfall</strong>, vous incarnez un être revenu à la vie. Mais qui êtes-vous vraiment ?<br />
-        Pour le savoir, vous devez affronter 10 boss, chacun représentant une émotion, un souvenir ou un traumatisme. Feu, glace, poison, égo, avarice… chaque combat est une épreuve physique et mentale.
-      </p>
-      <p>
-        Chaque boss cache un morceau de votre passé. Et le dernier, Soulfall, détient la vérité… mais aussi le secret de votre chute.
-      </p>
-      <p>
-        ✨ Le développement commence bientôt. <br />
-        Si vous voulez suivre cette aventure ou y participer, le lien Discord est juste ici ➤<br />
-        <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer" class="discord-link">Rejoindre le Discord</a>
-      </p>
-    </div>
+    <h2>🐉 Projet 2 – Soulfall</h2>
+    <p><em>Vous vous réveillez dans le noir… et votre mémoire s’est brisée.</em></p>
+    <p>
+      Dans <strong>Soulfall</strong>, vous incarnez un être revenu à la vie. Mais qui êtes-vous vraiment ?<br />
+      Pour le savoir, vous devez affronter 10 boss, chacun représentant une émotion, un souvenir ou un traumatisme. Feu, glace, poison, égo, avarice… chaque combat est une épreuve physique et mentale.
+    </p>
+    <p>
+      Chaque boss cache un morceau de votre passé. Et le dernier, Soulfall, détient la vérité… mais aussi le secret de votre chute.
+    </p>
+    <p>
+      ✨ Le développement commence bientôt. <br />
+      Si vous voulez suivre cette aventure ou y participer, le lien Discord est juste ici ➤<br />
+      <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer" class="btn-discord">Rejoindre le Discord</a>
+    </p>
 
     <footer>
-      &copy; 2025 JKuro Nova. Tous droits réservés.
+      © 2025 JKuro Nova - Tous droits réservés
     </footer>
   </div>
 </body>
