@@ -6,50 +6,39 @@
   <title>JKuro Nova – Le studio de demain</title>
   <style>
     body {
-      background-image: url('background.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-      background-color: #000; /* fallback */
+      color: #eee;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #121212; /* fallback */
     }
 
     .container {
-      background-color: rgba(10, 10, 25, 0.8);
-      padding: 30px;
-      border-radius: 20px;
       max-width: 900px;
       margin: 60px auto;
-      box-shadow:
-        0 0 15px #ff6a00,
-        0 0 40px #ff6a00;
-      border: 2px solid #ff6a00;
+      padding: 30px;
+      background-color: rgba(20, 20, 30, 0.75);
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 106, 0, 0.3);
     }
 
-    /* Logo centré et taille max */
     .logo {
       display: block;
-      max-width: 300px;
+      max-width: 280px;
       margin: 0 auto 30px auto;
-      filter: drop-shadow(0 0 10px #ff6a00);
+      filter: drop-shadow(0 0 5px rgba(255, 106, 0, 0.7));
     }
 
     h1, h2 {
       color: #ff6a00;
-      text-shadow:
-        0 0 5px #ff6a00,
-        0 0 15px #ff6a00,
-        0 0 30px #ff6a00;
+      text-shadow: 0 0 5px rgba(255, 106, 0, 0.7);
     }
 
     p, li {
       line-height: 1.6;
-      color: #f0d8b0;
-      text-shadow: 0 0 3px #ff6a00;
+      color: #ddd;
     }
 
     .section {
@@ -61,44 +50,33 @@
     }
 
     a {
-      color: #7cdfff;
+      color: #5ec8ff;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      text-shadow: 0 0 8px #7cdfff;
+      transition: color 0.3s ease;
     }
 
     a:hover {
-      color: #fff;
-      text-shadow:
-        0 0 10px #7cdfff,
-        0 0 20px #7cdfff,
-        0 0 30px #7cdfff;
+      color: #9fdfff;
       text-decoration: underline;
     }
 
-    /* Bouton Discord stylé */
     a.discord-link {
       display: inline-block;
-      background: #7289da;
+      background-color: #5865f2;
       color: white;
       padding: 10px 25px;
       border-radius: 25px;
       font-weight: 700;
-      box-shadow:
-        0 0 10px #7289da,
-        inset 0 0 5px #7289da;
-      transition: all 0.3s ease;
+      box-shadow: 0 0 8px #5865f2;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       margin-top: 15px;
       text-decoration: none;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     a.discord-link:hover {
-      background: #5b6eae;
-      box-shadow:
-        0 0 20px #7289da,
-        inset 0 0 10px #5b6eae;
+      background-color: #4752c4;
+      box-shadow: 0 0 15px #4752c4;
       transform: scale(1.05);
     }
 
@@ -107,16 +85,13 @@
       margin-top: 60px;
       font-size: 0.9em;
       color: #aaa;
-      text-shadow: 0 0 3px #ff6a00;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       .container {
+        margin: 40px 15px;
         padding: 20px;
-        margin: 40px 10px;
       }
-
       h1 {
         font-size: 1.8rem;
       }
