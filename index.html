@@ -1,113 +1,195 @@
-body {
-  background-image: url('background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
-  background-color: #000; /* fallback */
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JKuro Nova – Le studio de demain</title>
+  <style>
+    body {
+      background-image: url('background.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background-color: #000; /* fallback */
+    }
 
-/* Container avec un glow léger */
-.container {
-  background-color: rgba(10, 10, 25, 0.8);
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 900px;
-  margin: 60px auto;
-  box-shadow:
-    0 0 15px #ff6a00,
-    0 0 40px #ff6a00;
-  border: 2px solid #ff6a00;
-}
+    .container {
+      background-color: rgba(10, 10, 25, 0.8);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 900px;
+      margin: 60px auto;
+      box-shadow:
+        0 0 15px #ff6a00,
+        0 0 40px #ff6a00;
+      border: 2px solid #ff6a00;
+    }
 
-/* Titres avec néon */
-h1, h2 {
-  color: #ff6a00;
-  text-shadow:
-    0 0 5px #ff6a00,
-    0 0 15px #ff6a00,
-    0 0 30px #ff6a00;
-}
+    /* Logo centré et taille max */
+    .logo {
+      display: block;
+      max-width: 300px;
+      margin: 0 auto 30px auto;
+      filter: drop-shadow(0 0 10px #ff6a00);
+    }
 
-/* Paragraphes */
-p, li {
-  line-height: 1.6;
-  color: #f0d8b0;
-  text-shadow: 0 0 3px #ff6a00;
-}
+    h1, h2 {
+      color: #ff6a00;
+      text-shadow:
+        0 0 5px #ff6a00,
+        0 0 15px #ff6a00,
+        0 0 30px #ff6a00;
+    }
 
-/* Liens néon style */
-a {
-  color: #7cdfff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-shadow: 0 0 8px #7cdfff;
-}
+    p, li {
+      line-height: 1.6;
+      color: #f0d8b0;
+      text-shadow: 0 0 3px #ff6a00;
+    }
 
-a:hover {
-  color: #fff;
-  text-shadow:
-    0 0 10px #7cdfff,
-    0 0 20px #7cdfff,
-    0 0 30px #7cdfff;
-  text-decoration: underline;
-}
+    .section {
+      margin-top: 40px;
+    }
 
-/* Listes avec un peu plus d’espace */
-ul {
-  padding-left: 20px;
-}
+    ul {
+      padding-left: 20px;
+    }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 0.9em;
-  color: #aaa;
-  text-shadow: 0 0 3px #ff6a00;
-}
+    a {
+      color: #7cdfff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 8px #7cdfff;
+    }
 
-/* Bouton Discord stylé */
-a.discord-link {
-  display: inline-block;
-  background: #7289da;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-weight: 700;
-  box-shadow:
-    0 0 10px #7289da,
-    inset 0 0 5px #7289da;
-  transition: all 0.3s ease;
-  margin-top: 15px;
-  text-decoration: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    a:hover {
+      color: #fff;
+      text-shadow:
+        0 0 10px #7cdfff,
+        0 0 20px #7cdfff,
+        0 0 30px #7cdfff;
+      text-decoration: underline;
+    }
 
-a.discord-link:hover {
-  background: #5b6eae;
-  box-shadow:
-    0 0 20px #7289da,
-    inset 0 0 10px #5b6eae;
-  transform: scale(1.05);
-}
+    /* Bouton Discord stylé */
+    a.discord-link {
+      display: inline-block;
+      background: #7289da;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 700;
+      box-shadow:
+        0 0 10px #7289da,
+        inset 0 0 5px #7289da;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+      text-decoration: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .container {
-    padding: 20px;
-    margin: 40px 10px;
-  }
+    a.discord-link:hover {
+      background: #5b6eae;
+      box-shadow:
+        0 0 20px #7289da,
+        inset 0 0 10px #5b6eae;
+      transform: scale(1.05);
+    }
 
-  h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.3rem;
-  }
-}
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #aaa;
+      text-shadow: 0 0 3px #ff6a00;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        margin: 40px 10px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="Logo site web JKuro nova.png" alt="Logo JKuro Nova" class="logo" />
+
+    <h1>JKuro Nova – Le studio de demain, aujourd’hui</h1>
+
+    <p>
+      Bienvenue sur le site officiel de JKuro Nova, un collectif de jeunes créateurs passionnés par les jeux vidéo, les univers immersifs et les histoires qui marquent.<br />
+      🎮 <strong>Notre but ?</strong> Créer des expériences fortes, originales, et proches de notre communauté.
+    </p>
+
+    <p>
+      Actuellement, on travaille sur deux projets très spéciaux, et on a besoin de vous pour les faire grandir.<br />
+      👉 Rejoignez-nous, donnez-nous vos idées, vos avis… et surtout, suivez nos aventures !
+    </p>
+
+    <div class="section">
+      <h2>🔥 Qui sommes-nous ?</h2>
+      <p>Nous sommes trois créateurs :</p>
+      <ul>
+        <li>JK (YouTube : <a href="https://www.youtube.com/@JK-66-mp3" target="_blank" rel="noopener noreferrer">@JK-66-mp3</a>)</li>
+        <li>Seichele (YouTube : <a href="https://www.youtube.com/@Seichele-p3m" target="_blank" rel="noopener noreferrer">@Seichele-p3m</a>)</li>
+        <li>Zenova (YouTube : <a href="https://www.youtube.com/@Zenovamanchova" target="_blank" rel="noopener noreferrer">@Zenovamanchova</a>)</li>
+      </ul>
+      <p>
+        On se regroupe sous le nom <strong>JKuro Nova</strong>, un petit studio indépendant qui a de grandes ambitions.<br />
+        Vous pouvez aussi nous retrouver sur notre serveur 💬 <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer">Discord</a>, où on échange avec notre commu, on partage nos idées, et vous pouvez même proposer les vôtres.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>🥷 Projet 1 – Amberfall</h2>
+      <p><em>Un Assassin’s Creed… mais repensé par nous.</em></p>
+      <p>
+        <strong>Amberfall</strong>, c’est notre rêve de fans d’infiltration.<br />
+        L’histoire prend place au Japon, à l’époque Edo.<br />
+        On incarne un agent secret de l’Ordre des Anciens, envoyé pour récupérer des informations, infiltrer des clans ennemis et démêler une guerre de l’ombre dans un monde inspiré de l’art japonais et de la philosophie du silence.
+      </p>
+      <p>
+        Le jeu n’est pas encore en développement, mais l’univers prend forme chaque jour.<br />
+        📢 Si vous avez des idées de gameplay, de mécaniques ou de lore, venez les partager sur le Discord !
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>🐉 Projet 2 – Soulfall</h2>
+      <p><em>Vous vous réveillez dans le noir… et votre mémoire s’est brisée.</em></p>
+      <p>
+        Dans <strong>Soulfall</strong>, vous incarnez un être revenu à la vie. Mais qui êtes-vous vraiment ?<br />
+        Pour le savoir, vous devez affronter 10 boss, chacun représentant une émotion, un souvenir ou un traumatisme. Feu, glace, poison, égo, avarice… chaque combat est une épreuve physique et mentale.
+      </p>
+      <p>
+        Chaque boss cache un morceau de votre passé. Et le dernier, Soulfall, détient la vérité… mais aussi le secret de votre chute.
+      </p>
+      <p>
+        ✨ Le développement commence bientôt. <br />
+        Si vous voulez suivre cette aventure ou y participer, le lien Discord est juste ici ➤<br />
+        <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer" class="discord-link">Rejoindre le Discord</a>
+      </p>
+    </div>
+
+    <footer>
+      &copy; 2025 JKuro Nova. Tous droits réservés.
+    </footer>
+  </div>
+</body>
+</html>
