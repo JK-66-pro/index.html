@@ -1,204 +1,113 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JKuro Nova - Le studio de demain, aujourd’hui</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+body {
+  background-image: url('background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-color: #000; /* fallback */
+}
 
-    /* Reset & base */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: url('background.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 40px 20px;
-      overflow-y: auto;
-    }
+/* Container avec un glow léger */
+.container {
+  background-color: rgba(10, 10, 25, 0.8);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 60px auto;
+  box-shadow:
+    0 0 15px #ff6a00,
+    0 0 40px #ff6a00;
+  border: 2px solid #ff6a00;
+}
 
-    /* Conteneur principal avec glow néon */
-    .container {
-      background: rgba(10,10,30,0.85);
-      max-width: 800px;
-      padding: 40px 50px;
-      border-radius: 15px;
-      box-shadow:
-        0 0 10px #ff6a00,
-        0 0 20px #ff6a00,
-        0 0 30px #ff6a00,
-        0 0 40px #ff6a00,
-        0 0 60px #ff6a00;
-      border: 2px solid #ff6a00;
-      text-align: center;
-    }
+/* Titres avec néon */
+h1, h2 {
+  color: #ff6a00;
+  text-shadow:
+    0 0 5px #ff6a00,
+    0 0 15px #ff6a00,
+    0 0 30px #ff6a00;
+}
 
-    /* Logo centré avec effet néon */
-    .logo {
-      max-width: 180px;
-      margin-bottom: 40px;
-      filter: drop-shadow(0 0 6px #ff6a00);
-    }
+/* Paragraphes */
+p, li {
+  line-height: 1.6;
+  color: #f0d8b0;
+  text-shadow: 0 0 3px #ff6a00;
+}
 
-    /* Titres avec effet glow */
-    h1 {
-      font-size: 3rem;
-      color: #ff6a00;
-      text-shadow:
-        0 0 8px #ff6a00,
-        0 0 15px #ff6a00,
-        0 0 20px #ff6a00;
-      margin-bottom: 30px;
-    }
+/* Liens néon style */
+a {
+  color: #7cdfff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px #7cdfff;
+}
 
-    h2 {
-      font-size: 2rem;
-      color: #ff9c3b;
-      text-shadow: 0 0 8px #ff9c3b;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ff6a00;
-      padding-bottom: 6px;
-      text-align: left;
-    }
+a:hover {
+  color: #fff;
+  text-shadow:
+    0 0 10px #7cdfff,
+    0 0 20px #7cdfff,
+    0 0 30px #7cdfff;
+  text-decoration: underline;
+}
 
-    /* Paragraphes */
-    p, blockquote {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 25px;
-      color: #f4c26f;
-      text-align: justify;
-      text-shadow: 0 0 4px #ff7e00;
-    }
+/* Listes avec un peu plus d’espace */
+ul {
+  padding-left: 20px;
+}
 
-    blockquote {
-      border-left: 5px solid #ff6a00;
-      background: rgba(255, 106, 0, 0.15);
-      padding: 12px 20px;
-      font-style: italic;
-    }
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.9em;
+  color: #aaa;
+  text-shadow: 0 0 3px #ff6a00;
+}
 
-    a {
-      color: #ff9c3b;
-      font-weight: 700;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      word-break: break-word;
-    }
-    a:hover {
-      color: #fff1b0;
-      text-shadow: 0 0 8px #fff1b0;
-    }
+/* Bouton Discord stylé */
+a.discord-link {
+  display: inline-block;
+  background: #7289da;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 700;
+  box-shadow:
+    0 0 10px #7289da,
+    inset 0 0 5px #7289da;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    /* Boutons néon */
-    .btn-link {
-      display: inline-block;
-      background: #ff6a00;
-      color: #fff;
-      font-weight: 700;
-      padding: 12px 28px;
-      border-radius: 30px;
-      box-shadow:
-        0 0 8px #ff6a00,
-        0 0 15px #ff6a00,
-        inset 0 0 8px #ff6a00;
-      margin: 10px 12px 20px 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      user-select: none;
-    }
-    .btn-link:hover {
-      background: #ff8c33;
-      box-shadow:
-        0 0 20px #ff8c33,
-        0 0 30px #ff8c33,
-        inset 0 0 12px #ff8c33;
-      transform: scale(1.05);
-      text-shadow: 0 0 12px #fff;
-    }
+a.discord-link:hover {
+  background: #5b6eae;
+  box-shadow:
+    0 0 20px #7289da,
+    inset 0 0 10px #5b6eae;
+  transform: scale(1.05);
+}
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      body {
-        padding: 20px 15px;
-      }
-      .container {
-        padding: 30px 20px;
-      }
-      h1 {
-        font-size: 2.2rem;
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-      p, blockquote {
-        font-size: 1rem;
-      }
-      .logo {
-        max-width: 140px;
-        margin-bottom: 30px;
-      }
-    }
-  </style>
-</head>
-<body>
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    margin: 40px 10px;
+  }
 
-  <div class="container">
-    <img src="Logo site web JKuro nova.png" alt="Logo JKuro Nova" class="logo" />
-
-    <h1>JKuro Nova – Le studio de demain, aujourd’hui</h1>
-
-    <p>Bienvenue sur le site officiel de JKuro Nova, un collectif de jeunes créateurs passionnés par les jeux vidéo, les univers immersifs et les histoires qui marquent.<br />
-    🎮 Notre but ? Créer des expériences fortes, originales, et proches de notre communauté.</p>
-
-    <p>Actuellement, on travaille sur deux projets très spéciaux, et on a besoin de vous pour les faire grandir.<br />
-    👉 Rejoignez-nous, donnez-nous vos idées, vos avis… et surtout, suivez nos aventures !</p>
-
-    <hr style="border-color:#ff6a00; margin: 30px 0;" />
-
-    <h2>🔥 Qui sommes-nous ?</h2>
-    <p>Nous sommes trois créateurs :</p>
-    <blockquote>
-      JK (YouTube : <a href="https://www.youtube.com/@JK-66-mp3" target="_blank" rel="noopener noreferrer">@JK-66-mp3</a>)<br />
-      Seichele (YouTube : <a href="https://www.youtube.com/@Seichele-p3m" target="_blank" rel="noopener noreferrer">@Seichele-p3m</a>)<br />
-      Zenova (YouTube : <a href="https://www.youtube.com/@Zenovamanchova" target="_blank" rel="noopener noreferrer">@Zenovamanchova</a>)
-    </blockquote>
-
-    <p>On se regroupe sous le nom JKuro Nova, un petit studio indépendant qui a de grandes ambitions.<br />
-    Vous pouvez aussi nous retrouver sur notre serveur 💬 Discord, où on échange avec notre commu, on partage nos idées, et vous pouvez même proposer les vôtres.</p>
-
-    <hr style="border-color:#ff6a00; margin: 30px 0;" />
-
-    <h2>🥷 Projet 1 – Amberfall</h2>
-    <blockquote>Un Assassin’s Creed… mais repensé par nous.</blockquote>
-
-    <p>Amberfall, c’est notre rêve de fans d’infiltration.<br />
-    L’histoire prend place au Japon, à l’époque Edo.<br />
-    On incarne un agent secret de l’Ordre des Anciens, envoyé pour récupérer des informations, infiltrer des clans ennemis et démêler une guerre de l’ombre dans un monde inspiré de l’art japonais et de la philosophie du silence.</p>
-
-    <p>Le jeu n’est pas encore en développement, mais l’univers prend forme chaque jour.<br />
-    📢 Si vous avez des idées de gameplay, de mécaniques ou de lore, venez les partager sur le Discord !</p>
-
-    <hr style="border-color:#ff6a00; margin: 30px 0;" />
-
-    <h2>🐉 Projet 2 – Soulfall</h2>
-    <blockquote>Vous vous réveillez dans le noir… et votre mémoire s’est brisée.</blockquote>
-
-    <p>Dans Soulfall, vous incarnez un être revenu à la vie. Mais qui êtes-vous vraiment ?<br />
-    Pour le savoir, vous devez affronter 10 boss, chacun représentant une émotion, un souvenir ou un traumatisme. Feu, glace, poison, égo, avarice… chaque combat est une épreuve physique et mentale.</p>
-
-    <p>Chaque boss cache un morceau de votre passé. Et le dernier, Soulfall, détient la vérité… mais aussi le secret de votre chute.</p>
-
-    <p>✨ Le développement commence bientôt.<br />
-    Si vous voulez suivre cette aventure ou y participer, le lien Discord est juste ici ➤ <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer" class="btn-link">Rejoindre le Discord</a></p>
- 
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+}
