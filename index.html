@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JKuro Nova - Page Communautaire</title>
+  <title>JKuro Nova - Communauté</title>
   <link rel="icon" href="favicon.ico" />
 
   <style>
-    /* --- Fond global --- */
+    /* --- FOND GLOBAL --- */
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-image: url('background.png');
       background-size: cover;
       background-position: center;
@@ -18,93 +18,73 @@
       color: #ffffff;
     }
 
-    /* --- Conteneur principal --- */
+    /* --- CONTENEUR PRINCIPAL GLASS EFFECT --- */
     .container {
-      background-color: rgba(0, 0, 0, 0.6);
       max-width: 900px;
-      margin: 50px auto;
+      margin: 60px auto;
       padding: 30px;
-      border-radius: 16px;
-      animation: fadeIn 2s ease;
+      border-radius: 20px;
+      background: rgba(0, 72, 168, 0.6); /* BLEU TRANSPARENT */
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
     }
 
-    /* --- Logo --- */
+    /* --- LOGO --- */
     .logo {
       display: block;
       margin: 0 auto 20px;
-      width: 140px;
-      transition: transform 0.3s ease;
-    }
-    .logo:hover {
-      transform: scale(1.05);
+      width: 130px;
     }
 
-    /* --- Titres et textes --- */
+    /* --- TEXTES --- */
     h1, h2 {
       text-align: center;
-      color: #f0f0f0;
-      margin-top: 20px;
-      transition: color 0.3s;
+      color: #cce6ff;
     }
     p {
       font-size: 1.1em;
       line-height: 1.6;
     }
 
-    /* --- Sections animées --- */
-    .section {
-      margin-top: 40px;
-      animation: fadeInUp 1.5s ease;
-    }
-
-    /* --- Liens --- */
+    /* --- LIENS --- */
     a {
-      color: #7cdfff;
+      color: #a7d7ff;
       text-decoration: none;
-      transition: color 0.3s, text-decoration 0.3s;
+      font-weight: bold;
     }
     a:hover {
-      color: #00e5ff;
       text-decoration: underline;
+      color: #ffffff;
     }
 
-    /* --- Bouton stylé --- */
+    /* --- BOUTON --- */
     .button {
       display: inline-block;
-      background: linear-gradient(45deg, #00bfff, #8a2be2);
-      padding: 12px 25px;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.1em;
-      font-weight: bold;
+      background: #007bff;
       color: white;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 12px 24px;
+      border-radius: 10px;
       text-align: center;
-      margin-top: 15px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: 0.3s;
     }
     .button:hover {
+      background: #339eff;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
-    /* --- Footer --- */
+    /* --- SECTIONS --- */
+    .section {
+      margin-top: 40px;
+    }
+
+    /* --- FOOTER --- */
     footer {
       text-align: center;
-      font-size: 0.9em;
       margin-top: 60px;
-      color: #aaa;
-    }
-
-    /* --- Animations --- */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      font-size: 0.9em;
+      color: #cccccc;
     }
   </style>
 </head>
@@ -112,40 +92,40 @@
 
   <div class="container">
 
-    <!-- Logo principal -->
+    <!-- LOGO -->
     <img src="logo.png" alt="Logo JKuro Nova" class="logo" />
 
-    <!-- Présentation -->
-    <h1>Bienvenue sur le site communautaire de JKuro Nova</h1>
-    <p>On est une petite team de créateurs YouTube qui adore les jeux vidéo, les projets ambitieux, et les bonnes vibes. Rejoins-nous dans nos aventures !</p>
+    <!-- INTRO -->
+    <h1>Bienvenue sur JKuro Nova</h1>
+    <p>Une team de créateurs passionnés de jeux vidéo, d’histoires et de projets stylés. Rejoins l’aventure !</p>
 
-    <!-- Membres -->
+    <!-- MEMBRES -->
     <div class="section">
-      <h2>👥 Membres de l’équipe</h2>
+      <h2>👥 Membres</h2>
       <ul>
         <li><a href="https://www.youtube.com/@JK" target="_blank">JK</a></li>
-        <li><a href="https://www.youtube.com/@KuroGaming" target="_blank">Célestin / Kuro Gaming</a></li>
+        <li><a href="https://www.youtube.com/@KuroGaming" target="_blank">Kuro Gaming (Célestin)</a></li>
         <li><a href="https://www.youtube.com/@ZenovaFalls" target="_blank">Zenova Falls</a></li>
       </ul>
     </div>
 
-    <!-- Discord -->
+    <!-- DISCORD -->
     <div class="section">
-      <h2>💬 Rejoins le Discord</h2>
-      <p>Tu veux discuter, proposer des idées ou suivre les coulisses de nos projets ? Le serveur <strong>JK COMMUNAUTÉ</strong> est fait pour toi !</p>
-      <a href="https://discord.gg/ton-lien" class="button" target="_blank">Rejoindre le Discord</a>
+      <h2>💬 Serveur Discord</h2>
+      <p>Rejoins notre communauté et discute avec nous sur le serveur <strong>JK COMMUNAUTÉ</strong> !</p>
+      <a href="https://discord.gg/mv89bCU5U5" target="_blank" class="button">Rejoindre le Discord</a>
     </div>
 
-    <!-- Projets -->
+    <!-- PROJETS -->
     <div class="section">
       <h2>🎮 Projets en cours</h2>
-      <p>On travaille sur plusieurs projets, dont des vidéos sur Skyrim, une série Assassin's Creed originale, et même un jeu vidéo avec 10 boss qui parle de mémoire, trahison et vengeance. Rejoins-nous pour suivre le développement !</p>
+      <p>Skyrim RP, Assassin's Creed Yakuza, Soulfall... On a des idées, des univers, des histoires. Et on veut les partager avec toi.</p>
     </div>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
-      <p>&copy; 2025 JKuro Nova • Site communautaire</p>
-      <p>Visiteurs :  
+      <p>&copy; 2025 JKuro Nova • Tous droits réservés</p>
+      <p>Visiteurs :
         <img src="https://www.freecounterstat.com/count/xxxyyy123" alt="Compteur visiteurs" />
       </p>
     </footer>
