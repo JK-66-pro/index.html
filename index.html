@@ -2,320 +2,155 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JKuro Nova – Le studio de demain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JKuro Nova - Page Communautaire</title>
+  <link rel="icon" href="favicon.ico" />
+
   <style>
-    /* === Styles généraux === */
+    /* --- Fond global --- */
     body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-image: url('background.png');
       background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
       background-position: center;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      color: white;
-      cursor: url('cursor-default.png'), auto;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    .container {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 900px;
-      margin: 60px auto 100px;
-      animation: fadeIn 2s ease-in-out;
+      background-attachment: fixed;
+      color: #ffffff;
     }
 
-    h1, h2 {
-      color: #f0f0f0;
-      transition: color 0.3s;
+    /* --- Conteneur principal --- */
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 16px;
+      animation: fadeIn 2s ease;
     }
-    p, li {
-      line-height: 1.6;
-    }
-    .section {
-      margin-top: 40px;
-      animation: fadeInUp 1.5s ease-out;
-    }
+
+    /* --- Logo --- */
     .logo {
       display: block;
-      max-width: 300px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 20px;
+      width: 140px;
       transition: transform 0.3s ease;
     }
     .logo:hover {
       transform: scale(1.05);
     }
+
+    /* --- Titres et textes --- */
+    h1, h2 {
+      text-align: center;
+      color: #f0f0f0;
+      margin-top: 20px;
+      transition: color 0.3s;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* --- Sections animées --- */
+    .section {
+      margin-top: 40px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    /* --- Liens --- */
     a {
       color: #7cdfff;
       text-decoration: none;
-      transition: color 0.3s ease;
-      cursor: url('cursor-pointer.png'), pointer;
+      transition: color 0.3s, text-decoration 0.3s;
     }
     a:hover {
-      text-decoration: underline;
       color: #00e5ff;
+      text-decoration: underline;
     }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #ccc;
-    }
+
+    /* --- Bouton stylé --- */
     .button {
       display: inline-block;
-      padding: 12px 20px;
-      background: linear-gradient(135deg, #00e5ff, #7c5fff);
-      color: white;
-      font-weight: bold;
+      background: linear-gradient(45deg, #00bfff, #8a2be2);
+      padding: 12px 25px;
       border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: url('cursor-pointer.png'), pointer;
+      border-radius: 12px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+      margin-top: 15px;
     }
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0, 229, 255, 0.3);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      margin-top: 60px;
+      color: #aaa;
+    }
+
+    /* --- Animations --- */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* === Mode sombre / clair === */
-    body.light-mode {
-      background-image: none;
-      background-color: #f0f0f0;
-      color: #222;
-    }
-    body.light-mode .container {
-      background-color: rgba(255, 255, 255, 0.9);
-      color: #222;
-    }
-    body.light-mode a {
-      color: #005f99;
-    }
-    body.light-mode a:hover {
-      color: #003d66;
-    }
-    body.light-mode footer {
-      color: #555;
-    }
-
-    /* === Toggle mode bouton === */
-    #modeToggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #222;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: bold;
-      z-index: 9999;
-      transition: background 0.3s;
-    }
-    #modeToggle:hover {
-      background: #005f99;
-    }
-    body.light-mode #modeToggle {
-      background: #ddd;
-      color: #222;
-    }
-    body.light-mode #modeToggle:hover {
-      background: #aaa;
-    }
-
-    /* === Curseur personnalisé === */
-    /* Curseur par défaut est dans body, curseur pointer sur liens et boutons */
-
-    /* === Scroll fluide === */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* === Machine à écrire === */
-    .typewriter {
-      overflow: hidden;
-      border-right: .15em solid #7cdfff;
-      white-space: nowrap;
-      animation:
-        typing 3s steps(40, end),
-        blink-caret 0.75s step-end infinite;
-      max-width: 100%;
-      font-weight: bold;
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink-caret {
-      50% { border-color: transparent }
-      100% { border-color: #7cdfff }
-    }
-
-    /* === Bouton retour en haut === */
-    #backToTop {
-      position: fixed;
-      bottom: 40px;
-      right: 40px;
-      background: #00e5ff;
-      color: #000;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      display: none;
-      box-shadow: 0 4px 10px rgba(0, 229, 255, 0.5);
-      z-index: 9999;
-      transition: background 0.3s;
-    }
-    #backToTop:hover {
-      background: #007fae;
-      color: #fff;
-    }
-
-    /* === Simple menu de navigation === */
-    nav {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    nav a {
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 1.1em;
-      color: #7cdfff;
-      cursor: url('cursor-pointer.png'), pointer;
-    }
-    nav a:hover {
-      color: #00e5ff;
-      text-decoration: underline;
-    }
-
-    /* Responsive simplifié */
-    @media(max-width: 600px) {
-      .container {
-        margin: 40px 15px 100px;
-        padding: 20px;
-      }
-      .typewriter {
-        font-size: 1.4em;
-      }
-      nav a {
-        display: inline-block;
-        margin: 0 10px 10px;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Bouton toggle mode -->
-  <button id="modeToggle" aria-label="Changer mode clair/sombre">🌙</button>
 
   <div class="container">
-    <img src="Logo site web JKuro nova.png" alt="Logo JKuro Nova" class="logo">
 
-    <nav>
-      <a href="#qui-sommes-nous">Qui sommes-nous ?</a>
-      <a href="#projet-amberfall">Amberfall</a>
-      <a href="#projet-soulfall">Soulfall</a>
-      <a href="#footer">Contact</a>
-    </nav>
+    <!-- Logo principal -->
+    <img src="logo.png" alt="Logo JKuro Nova" class="logo" />
 
-    <h1 class="typewriter">JKuro Nova – Le studio de demain, aujourd’hui</h1>
+    <!-- Présentation -->
+    <h1>Bienvenue sur le site communautaire de JKuro Nova</h1>
+    <p>On est une petite team de créateurs YouTube qui adore les jeux vidéo, les projets ambitieux, et les bonnes vibes. Rejoins-nous dans nos aventures !</p>
 
-    <p>Bienvenue sur le site officiel de JKuro Nova, un collectif de jeunes créateurs passionnés par les jeux vidéo, les univers immersifs et les histoires qui marquent.<br>
-    🎮 <strong>Notre but ?</strong> Créer des expériences fortes, originales, et proches de notre communauté.</p>
-
-    <p>Actuellement, on travaille sur deux projets très spéciaux, et on a besoin de vous pour les faire grandir.<br>
-    👉 Rejoignez-nous, donnez-nous vos idées, vos avis… et surtout, suivez nos aventures !</p>
-
-    <a class="button" href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer">Rejoindre le Discord</a>
-
-    <div id="qui-sommes-nous" class="section">
-      <h2>🔥 Qui sommes-nous ?</h2>
-      <p>Nous sommes trois créateurs :</p>
+    <!-- Membres -->
+    <div class="section">
+      <h2>👥 Membres de l’équipe</h2>
       <ul>
-        <li>JK (YouTube : <a href="https://www.youtube.com/@JK-66-mp3" target="_blank" rel="noopener noreferrer">@JK-66-mp3</a>)</li>
-        <li>Seichele (YouTube : <a href="https://www.youtube.com/@Seichele-p3m" target="_blank" rel="noopener noreferrer">@Seichele-p3m</a>)</li>
-        <li>Zenova (YouTube : <a href="https://www.youtube.com/@Zenovamanchova" target="_blank" rel="noopener noreferrer">@Zenovamanchova</a>)</li>
+        <li><a href="https://www.youtube.com/@JK" target="_blank">JK</a></li>
+        <li><a href="https://www.youtube.com/@KuroGaming" target="_blank">Célestin / Kuro Gaming</a></li>
+        <li><a href="https://www.youtube.com/@ZenovaFalls" target="_blank">Zenova Falls</a></li>
       </ul>
-      <p>On se regroupe sous le nom <strong>JKuro Nova</strong>, un petit studio indépendant qui a de grandes ambitions.<br>
-      Vous pouvez aussi nous retrouver sur notre serveur 💬 <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer">Discord</a>, où on échange avec notre commu, on partage nos idées, et vous pouvez même proposer les vôtres.</p>
     </div>
 
-    <div id="projet-amberfall" class="section">
-      <h2>🥷 Projet 1 – Amberfall</h2>
-      <p><em>Un Assassin’s Creed… mais repensé par nous.</em></p>
-      <p><strong>Amberfall</strong>, c’est notre rêve de fans d’infiltration.<br>
-      L’histoire prend place au Japon, à l’époque Edo.<br>
-      On incarne un agent secret de l’Ordre des Anciens, envoyé pour récupérer des informations, infiltrer des clans ennemis et démêler une guerre de l’ombre dans un monde inspiré de l’art japonais et de la philosophie du silence.</p>
-      <p>Le jeu n’est pas encore en développement, mais l’univers prend forme chaque jour.<br>
-      📢 Si vous avez des idées de gameplay, de mécaniques ou de lore, venez les partager sur le Discord !</p>
+    <!-- Discord -->
+    <div class="section">
+      <h2>💬 Rejoins le Discord</h2>
+      <p>Tu veux discuter, proposer des idées ou suivre les coulisses de nos projets ? Le serveur <strong>JK COMMUNAUTÉ</strong> est fait pour toi !</p>
+      <a href="https://discord.gg/ton-lien" class="button" target="_blank">Rejoindre le Discord</a>
     </div>
 
-    <div id="projet-soulfall" class="section">
-      <h2>🐉 Projet 2 – Soulfall</h2>
-      <p><em>Vous vous réveillez dans le noir… et votre mémoire s’est brisée.</em></p>
-      <p>Dans <strong>Soulfall</strong>, vous incarnez un être revenu à la vie. Mais qui êtes-vous vraiment ?<br>
-      Pour le savoir, vous devez affronter 10 boss, chacun représentant une émotion, un souvenir ou un traumatisme. Feu, glace, poison, égo, avarice… chaque combat est une épreuve physique et mentale.</p>
-      <p>Chaque boss cache un morceau de votre passé. Et le dernier, Soulfall, détient la vérité… mais aussi le secret de votre chute.</p>
-      <p>✨ Le développement commence bientôt. <br>
-      Si vous voulez suivre cette aventure ou y participer, le lien Discord est juste ici ➤ <a href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer">https://discord.gg/sCdM7jDGWu</a></p>
+    <!-- Projets -->
+    <div class="section">
+      <h2>🎮 Projets en cours</h2>
+      <p>On travaille sur plusieurs projets, dont des vidéos sur Skyrim, une série Assassin's Creed originale, et même un jeu vidéo avec 10 boss qui parle de mémoire, trahison et vengeance. Rejoins-nous pour suivre le développement !</p>
     </div>
 
-    <footer id="footer">
-      &copy; 2025 JKuro Nova. Tous droits réservés.<br />
-      Visiteurs : <a href="https://www.freecounterstat.com" title="site hit counter" target="_blank" rel="noopener noreferrer">
-        <img src="https://counter7.stat.ovh/private/freecounterstat.php?c=5hnm4pv5zy3exkkv2y9b5h9v8cbk9r1s" border="0" title="site hit counter" alt="site hit counter" />
-      </a>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 JKuro Nova • Site communautaire</p>
+      <p>Visiteurs :  
+        <img src="https://www.freecounterstat.com/count/xxxyyy123" alt="Compteur visiteurs" />
+      </p>
     </footer>
+
   </div>
 
-  <!-- Bouton retour en haut -->
-  <button id="backToTop" title="Retour en haut">↑</button>
-
-  <script>
-    // Mode sombre / clair
-    const modeToggle = document.getElementById('modeToggle');
-    modeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      // Changer l'icône
-      if(document.body.classList.contains('light-mode')){
-        modeToggle.textContent = '🌙';
-      } else {
-        modeToggle.textContent = '☀️';
-      }
-    });
-
-    // Bouton retour en haut
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 300){
-        backToTop.style.display = 'block';
-      } else {
-        backToTop.style.display = 'none';
-      }
-    });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    });
-
-    // Curseur personnalisé changement sur liens et boutons (optionnel - si tu as tes images cursor-default.png & cursor-pointer.png)
-    // Sinon, tu peux supprimer les url() dans CSS
-
-  </script>
 </body>
 </html>
