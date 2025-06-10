@@ -1,100 +1,228 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JKuro Nova — Le Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JKuro Nova – Le studio d’aujourd’hui, le studio de demain</title>
   <style>
+    /* Reset & base */
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
-      background: url('https://wallpapercave.com/wp/wp2757874.gif') no-repeat center center fixed;
+      font-family: Arial, sans-serif;
+      background-image: url('background.png');
       background-size: cover;
-      overflow-x: hidden;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      scroll-behavior: smooth;
     }
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 0;
-    }
-
+    /* Conteneur principal */
     .container {
+      max-width: 900px;
+      margin: 60px auto 100px auto;
+      padding: 30px;
+      background-color: rgba(0,0,0,0.8);
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00e5ff88;
+      animation: fadeIn 2s ease-in-out;
       position: relative;
       z-index: 1;
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
     }
 
-    .text-box {
-      background-color: rgba(0, 0, 0, 0.8);
-      border: 2px solid #00f2ff;
-      box-shadow: 0 0 20px #00f2ff;
-      padding: 30px;
-      border-radius: 15px;
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      text-align: center;
+      text-shadow:
+         0 0 5px #00e5ff,
+         0 0 10px #00e5ff,
+         0 0 20px #00e5ff,
+         0 0 40px #00e5ff;
     }
 
-    h1, h2 {
-      color: #00f2ff;
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
-    a {
-      color: #00f2ff;
+    .section {
+      margin-top: 50px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    a.button, .yt-button, .discord-button {
+      display: inline-block;
+      padding: 12px 22px;
+      margin: 6px 6px 6px 0;
+      background: linear-gradient(135deg, #00e5ff, #7c5fff);
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
       text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 8px #00e5ffaa;
+      user-select: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    a.button:hover,
+    .yt-button:hover,
+    .discord-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 18px #00e5ffcc;
     }
+
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 0.9em;
+      color: #ccc;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Logo */
+    .logo {
+      display: block;
+      max-width: 300px;
+      margin: 0 auto 35px auto;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Barre flottante gauche */
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 15px 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00e5ff88;
+    }
+
+    .sidebar a {
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #005f7f, #006fd8);
+      border-radius: 8px;
+      color: #a0e7ff;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 0 6px #00e5ffaa;
+      transition:
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+      user-select: none;
+    }
+
+    .sidebar a:hover,
+    .sidebar a:focus {
+      background-color: #00e5ff;
+      color: #001f3f;
+      box-shadow:
+        0 0 8px #00e5ff,
+        0 0 12px #00e5ff,
+        0 0 20px #00e5ff;
+      transform: translateX(6px);
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .container {
+        margin: 100px 20px 80px 20px;
+        padding: 25px;
+      }
+
+      .sidebar {
+        left: auto;
+        right: 10px;
+        top: auto;
+        bottom: 20px;
+        flex-direction: row;
+        transform: none;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 0 10px #00e5ff88;
+      }
+
+      .sidebar a {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
+
+  <!-- Barre flottante -->
+  <nav class="sidebar" aria-label="Navigation principale">
+    <a href="#accueil" tabindex="1">Accueil</a>
+    <a href="#soulfall" tabindex="2">Soulfall</a>
+    <a href="#amberfall" tabindex="3">Amberfall</a>
+    <a href="#communaute" tabindex="4">Communauté</a>
+  </nav>
+
   <div class="container">
-    <div class="text-box">
-      <h1>🌌 JKuro Nova — Le Studio</h1>
-      <p>
-        Bienvenue sur le site de JKuro Nova.<br><br>
-        Ici, on fait les choses avec passion, entre potes, avec l’envie de créer des jeux qui claquent, qui marquent, qui font kiffer. On est un petit studio indépendant, monté par une bande de créateurs motivés : JK, Kuro, Zenova, et tous ceux qui nous soutiennent au quotidien.<br><br>
-        On ne roule pas sur l’or, mais on roule sur les idées. On a des projets plein la tête, des histoires à raconter, des univers à construire, et une énorme envie de vous embarquer avec nous.<br><br>
-        Notre but ? Créer des jeux funs, profonds, stylés, avec du cœur dedans. Si vous voulez suivre nos projets, voir comment on avance, ou même nous filer des idées, vous êtes au bon endroit.<br><br>
-        → Nos chaînes YouTube :<br>
-        @JK-66-mp3 | @Seichele-p3m | @Zenovamanchova<br><br>
-        → Notre serveur Discord pour discuter, proposer, ou juste passer dire bonjour :<br>
-        <a href="https://discord.gg/sCdM7jDGWu" target="_blank">https://discord.gg/sCdM7jDGWu</a>
-      </p>
 
-      <hr>
+    <img src="Logo site web JKuro nova.png" alt="Logo JKuro Nova" class="logo" />
 
+    <h1 id="accueil">JKuro Nova — Le studio d’aujourd’hui, le studio de demain</h1>
+
+    <p>
+      🌌 JKuro Nova — Le Studio<br><br>
+
+      Bienvenue sur le site de JKuro Nova.<br>
+      Ici, on fait les choses avec passion, entre potes, avec l’envie de créer des jeux qui claquent, qui marquent, qui font kiffer. On est un petit studio indépendant, monté par une bande de créateurs motivés : JK, Kuro, Zenova, et tous ceux qui nous soutiennent au quotidien.<br>
+      On ne roule pas sur l’or, mais on roule sur les idées. On a des projets plein la tête, des histoires à raconter, des univers à construire, et une énorme envie de vous embarquer avec nous.<br><br>
+
+      Notre but ? Créer des jeux funs, profonds, stylés, avec du cœur dedans. Si vous voulez suivre nos projets, voir comment on avance, ou même nous filer des idées, vous êtes au bon endroit.<br>
+      → Nos chaînes YouTube :<br>
+      <a class="yt-button" href="https://www.youtube.com/@JK-66-mp3" target="_blank" rel="noopener noreferrer">@JK-66-mp3</a> 
+      <a class="yt-button" href="https://www.youtube.com/@Seichele-p3m" target="_blank" rel="noopener noreferrer">@Seichele-p3m</a> 
+      <a class="yt-button" href="https://www.youtube.com/@Zenovamanchova" target="_blank" rel="noopener noreferrer">@Zenovamanchova</a><br><br>
+
+      → Notre serveur Discord pour discuter, proposer, ou juste passer dire bonjour :<br>
+      <a class="discord-button" href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer">Rejoindre le Discord</a>
+    </p>
+
+    <hr />
+
+    <section class="section" id="soulfall" tabindex="0" aria-label="Projet Soulfall">
       <h2>🔥 Soulfall — Mémoire brisée, combat épique</h2>
       <p>
-        Soulfall, c’est pas juste un jeu, c’est une descente dans les souvenirs d’un héros oublié.<br><br>
-        On incarne un personnage mystérieux, revenu d'entre les morts… mais sans mémoire. Tout ce qu’on sait, c’est qu’il va falloir affronter dix boss. Chacun représente un fragment de votre passé, une émotion, une douleur, une trahison.<br><br>
+        Soulfall, c’est pas juste un jeu, c’est une descente dans les souvenirs d’un héros oublié.<br>
+        On incarne un personnage mystérieux, revenu d'entre les morts… mais sans mémoire. Tout ce qu’on sait, c’est qu’il va falloir affronter dix boss. Chacun représente un fragment de votre passé, une émotion, une douleur, une trahison.<br>
         Et chaque combat, chaque victoire, vous rapproche de la vérité…<br>
         Mais attention : parfois, ce qu’on découvre n’est pas ce qu’on voulait entendre.<br><br>
-        Soulfall mélange action, narration, mystère, et symbolisme. Chaque boss, chaque décor, chaque morceau de musique raconte quelque chose. Et petit à petit, vous allez reconstituer le puzzle de votre histoire… jusqu’à faire face au vrai boss final, celui qui vous a rendu la vie… mais à quel prix ?<br><br>
-        Le jeu est encore en phase de conception, mais si vous avez des idées de mécaniques, d’univers, ou de musiques, venez nous aider à faire de Soulfall un jeu inoubliable.
-      </p>
 
-      <hr>
-
-      <h2>🥷 Amberfall — Le Japon, l’infiltration, l’Ordre des Anciens</h2>
-      <p>
-        Amberfall, c’est notre lettre d’amour à Assassin’s Creed.<br><br>
-        Mais un Assassin’s Creed comme on le rêvait.<br>
-        Retour aux vraies racines : infiltration, tension, discrétion, et choix moraux. Le tout dans un Japon de l’époque Edo, mystérieux, dangereux et fascinant.<br><br>
-        Dans Amberfall, on ne joue pas un assassin… mais un membre de l’Ordre des Anciens. Oui, ceux qu’on pensait être les méchants. Et c’est là que tout change. On vous plonge dans les coulisses de l’histoire, là où rien n’est blanc ou noir. Vous devrez infiltrer, manipuler, survivre, et découvrir ce que cache réellement la guerre secrète des ombres.<br><br>
-        Pour l’instant, le jeu n’est qu’un projet. Mais on y croit fort. On bosse sur l’histoire, les mécaniques, l’ambiance. Et on veut le construire avec vous.<br>
-        Alors si vous avez une idée de mission, d’environnement, ou même de personnage… passez nous voir sur le Discord.
-      </p>
-    </div>
-  </div>
-</body>
-</html>
+        Soulfall mélange action, narration, mystère, et symbolisme. Chaque boss, chaque décor, chaque morceau de musique raconte quelque chose. Et petit à petit, vous allez reconstituer le puzzle de votre histoire… jusqu’à faire face au vrai boss final, celui qui vous a rendu la vie… mais à quel
