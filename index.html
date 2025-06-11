@@ -27,7 +27,6 @@
       background-color: rgba(0,0,0,0.8);
       border-radius: 15px;
       box-shadow: 0 0 15px #00e5ff88;
-      animation: fadeIn 2s ease-in-out;
       position: relative;
       z-index: 1;
     }
@@ -50,7 +49,6 @@
 
     .section {
       margin-top: 50px;
-      animation: fadeInUp 1.5s ease-out;
     }
 
     a.button, .yt-button, .discord-button {
@@ -65,7 +63,6 @@
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 0 8px #00e5ffaa;
-      user-select: none;
     }
 
     a.button:hover,
@@ -80,8 +77,6 @@
       margin-top: 80px;
       font-size: 0.9em;
       color: #ccc;
-      position: relative;
-      z-index: 1;
     }
 
     /* Logo */
@@ -89,21 +84,6 @@
       display: block;
       max-width: 300px;
       margin: 0 auto 35px auto;
-      transition: transform 0.3s ease;
-    }
-
-    .logo:hover {
-      transform: scale(1.05);
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
     }
 
     /* Barre flottante gauche */
@@ -131,33 +111,15 @@
       text-decoration: none;
       text-align: center;
       box-shadow: 0 0 6px #00e5ffaa;
-      transition:
-        box-shadow 0.3s ease,
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
-      user-select: none;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
 
-    .sidebar a:hover,
-    .sidebar a:focus {
-      background-color: #00e5ff;
-      color: #001f3f;
-      box-shadow:
-        0 0 8px #00e5ff,
-        0 0 12px #00e5ff,
-        0 0 20px #00e5ff;
+    .sidebar a:hover {
       transform: translateX(6px);
-      outline: none;
+      box-shadow: 0 0 12px #00e5ff;
     }
 
-    /* Responsive */
     @media (max-width: 720px) {
-      .container {
-        margin: 100px 20px 80px 20px;
-        padding: 25px;
-      }
-
       .sidebar {
         left: auto;
         right: 10px;
@@ -167,62 +129,61 @@
         transform: none;
         border-radius: 8px;
         padding: 10px;
-        box-shadow: 0 0 10px #00e5ff88;
-      }
-
-      .sidebar a {
-        padding: 10px 14px;
-        font-size: 0.9rem;
-      }
-
-      h1 {
-        font-size: 2rem;
       }
     }
-
   </style>
 </head>
 <body>
 
   <!-- Barre flottante -->
-  <nav class="sidebar" aria-label="Navigation principale">
-    <a href="#accueil" tabindex="1">Accueil</a>
-    <a href="#soulfall" tabindex="2">Soulfall</a>
-    <a href="#amberfall" tabindex="3">Amberfall</a>
-    <a href="#communaute" tabindex="4">Communauté</a>
+  <nav class="sidebar">
+    <a href="#accueil">Accueil</a>
+    <a href="#soulfall">Soulfall</a>
+    <a href="#amberfall">Amberfall</a>
+    <a href="#communaute">Communauté</a>
   </nav>
 
   <div class="container">
-
     <img src="Logo site web JKuro nova.png" alt="Logo JKuro Nova" class="logo" />
-
     <h1 id="accueil">JKuro Nova — Le studio d’aujourd’hui, le studio de demain</h1>
-
     <p>
-      🌌 JKuro Nova — Le Studio<br><br>
-
-      Bienvenue sur le site de JKuro Nova.<br>
-      Ici, on fait les choses avec passion, entre potes, avec l’envie de créer des jeux qui claquent, qui marquent, qui font kiffer. On est un petit studio indépendant, monté par une bande de créateurs motivés : JK, Kuro, Zenova, et tous ceux qui nous soutiennent au quotidien.<br>
-      On ne roule pas sur l’or, mais on roule sur les idées. On a des projets plein la tête, des histoires à raconter, des univers à construire, et une énorme envie de vous embarquer avec nous.<br><br>
-
-      Notre but ? Créer des jeux funs, profonds, stylés, avec du cœur dedans. Si vous voulez suivre nos projets, voir comment on avance, ou même nous filer des idées, vous êtes au bon endroit.<br>
-      → Nos chaînes YouTube :<br>
-      <a class="yt-button" href="https://www.youtube.com/@JK-66-mp3" target="_blank" rel="noopener noreferrer">@JK-66-mp3</a> 
-      <a class="yt-button" href="https://www.youtube.com/@Seichele-p3m" target="_blank" rel="noopener noreferrer">@Seichele-p3m</a> 
-      <a class="yt-button" href="https://www.youtube.com/@Zenovamanchova" target="_blank" rel="noopener noreferrer">@Zenovamanchova</a><br><br>
-
-      → Notre serveur Discord pour discuter, proposer, ou juste passer dire bonjour :<br>
-      <a class="discord-button" href="https://discord.gg/sCdM7jDGWu" target="_blank" rel="noopener noreferrer">Rejoindre le Discord</a>
+      Bienvenue dans l'univers de JKuro Nova, où la passion devient création. On est un studio indé, composé de créateurs motivés : JK, Kuro, Zenova... On veut juste créer des jeux qui claquent, avec du sens, des combats épiques et des histoires qui restent en tête.<br><br>
+      Suis nos créateurs :<br>
+      <a class="yt-button" href="https://www.youtube.com/@JK-66-mp3" target="_blank">@JK-66-mp3</a>
+      <a class="yt-button" href="https://www.youtube.com/@Seichele-p3m" target="_blank">@Seichele-p3m</a>
+      <a class="yt-button" href="https://www.youtube.com/@Zenovamanchova" target="_blank">@Zenovamanchova</a><br><br>
+      <a class="discord-button" href="https://discord.gg/sCdM7jDGWu" target="_blank">Rejoindre le Discord</a>
     </p>
 
-    <hr />
-
-    <section class="section" id="soulfall" tabindex="0" aria-label="Projet Soulfall">
-      <h2>🔥 Soulfall — Mémoire brisée, combat épique</h2>
+    <section class="section" id="soulfall">
+      <h2>Soulfall — Mémoire brisée, combat épique</h2>
       <p>
-        Soulfall, c’est pas juste un jeu, c’est une descente dans les souvenirs d’un héros oublié.<br>
-        On incarne un personnage mystérieux, revenu d'entre les morts… mais sans mémoire. Tout ce qu’on sait, c’est qu’il va falloir affronter dix boss. Chacun représente un fragment de votre passé, une émotion, une douleur, une trahison.<br>
-        Et chaque combat, chaque victoire, vous rapproche de la vérité…<br>
-        Mais attention : parfois, ce qu’on découvre n’est pas ce qu’on voulait entendre.<br><br>
+        Incarnez un héros sans mémoire, revenu d'entre les morts pour affronter ses propres souvenirs. Chaque boss représente une émotion, une blessure, un souvenir. Vengeance, honte, peur, déni...
+        À mesure que vous les terrassez, vous reconstituez votre passé. Jusqu'à affronter Soulfall lui-même, celui qui vous a redonné vie... mais à quel prix ?
+      </p>
+    </section>
 
-        Soulfall mélange action, narration, mystère, et symbolisme. Chaque boss, chaque décor, chaque morceau de musique raconte quelque chose. Et petit à petit, vous allez reconstituer le puzzle de votre histoire… jusqu’à faire face au vrai boss final, celui qui vous a rendu la vie… mais à quel
+    <section class="section" id="amberfall">
+      <h2>Amberfall — Le destin d’un monde est entre vos mains</h2>
+      <p>
+        Amberfall, c’est notre RPG le plus ambitieux. Un monde ouvert, des quêtes à choix multiples, une guerre qui couve entre factions, et vous au milieu de tout ça.<br>
+        Vos décisions auront de vraies conséquences. Loyauté ou trahison, stratégie ou force brute, à vous de tracer votre chemin dans ce monde déchiré.
+      </p>
+    </section>
+
+    <section class="section" id="communaute">
+      <h2>Communauté — On construit tout ça avec vous</h2>
+      <p>
+        JKuro Nova, c’est pas qu’un studio, c’est aussi une communauté. Sur notre Discord, tu peux discuter des jeux, proposer des idées, donner ton avis, même participer à des votes pour certaines décisions de dev.<br><br>
+        On veut rester proches de vous, les joueurs, les créateurs, les curieux. Alors rejoignez-nous, et faisons de JKuro Nova quelque chose d’encore plus grand.
+      </p>
+      <a class="discord-button" href="https://discord.gg/sCdM7jDGWu" target="_blank">Rejoindre la communauté</a>
+    </section>
+
+    <footer>
+      &copy; 2025 JKuro Nova. Tous droits réservés.
+    </footer>
+  </div>
+
+</body>
+</html>
